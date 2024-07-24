@@ -1,0 +1,25 @@
+{
+  "name": "webdriverio_mocha_percy_sample",
+  "type": "module",
+  "devDependencies": {
+    "@percy/cli": "^1.29.0",
+    "@percy/webdriverio": "^3.1.1",
+    "@wdio/cli": "^8.39.1",
+    "@wdio/local-runner": "^8.39.1",
+    "@wdio/mocha-framework": "^8.39.0",
+    "@wdio/spec-reporter": "^8.39.0",
+    "@wdio/visual-service": "^5.1.1"
+  },
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js",
+    "test:tag": "node tag-runner.js",
+    "test:tags": "npx wdio run ./wdio.conf.js --mochaOpts.grep=$TAG",
+    "percy": "npx percy exec -- wdio wdio.conf.js --mochaOpts.grep=$TAG"
+  },
+  "dependencies": {
+    "@babel/register": "^7.24.6",
+    "@wdio/cucumber-framework": "^8.39.0",
+    "dotenv": "^16.4.5",
+    "fast-glob": "^3.3.2"
+  }
+}
